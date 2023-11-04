@@ -13,24 +13,22 @@ console.log( playerHandScore("KJ") ); // 6
 console.log( playerHandScore("KQQ") ); // 10
 
 */
-function playerHandScore(cards) {
-  // Create an object to store the points corresponding to each card
-  const cardValues = {
-    "K": 4,
-    "Q": 3,
-    "J": 2
-  };
 
-  // Calculate the total score based on the provided rules
-  let totalScore = 0;
-  for (let i = 0; i < cards.length; i++) {
-    let card = cards[i];
-    // If the card is in the cardValues object, add its corresponding points to the total score
-    if (card in cardValues) {
-      totalScore += cardValues[card];
+function playerHandScore(hand) {
+    const scores = {
+        "K": 4,
+        "Q": 3,
+        "J": 2
     }
-  }
 
-  // Return the total score
-  return totalScore;
+    const handArr = hand.split("");
+    let sum = 0;
+    for(let i = 0; i < handArr.length; i++) {
+        const score = scores[handArr[i]];
+        sum += score;
+    }
+
+    return sum;
 }
+
+module.exports = playerHandScore;
