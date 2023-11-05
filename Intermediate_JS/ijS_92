@@ -15,3 +15,11 @@ We can get the same JSON as above by using JSON.stringify on an existing object:
 const person = JSON.stringify({ name: "Jim" });
 
 console.log(person); // {"name":"Jim"}
+*/
+
+function toJSON(obj) {
+
+    return JSON.stringify(obj);
+}
+
+module.exports = toJSON;
